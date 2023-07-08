@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('password');
             $table->string('school', 100);
-            $table->string('grade', 20);
+            $table->integer('grade');
             $table->rememberToken();
             $table->timestamps();
         });
