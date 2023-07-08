@@ -21,8 +21,9 @@ class Post extends Model
         return $this::with('category')->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
 
-    public function category()
+    public function user()
     {
         return $this->belongsTo(Category::class);
     }
+    
 }
