@@ -1,13 +1,21 @@
 <x-app-layout>
     <x-slot name="header">
-        詳細画面
+        
     </x-slot>
     <body>
         <h1>詳細画面</h1>
         <div>
-            <p>タイトル：{{ $post->title }}</p>
-            <p>本文：{{ $post->body }}</p>
-            <p>カテゴリー：<a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a></p>
+            <p>{{ $post->date }}</p>
+            <p>{{ $post->weather }}</p>
+            <p>今日あったこと</p>
+            <p>{{ $post->daily }}</p>
+            <p>{{ $post->date }}</p>
+            <div>
+                <img src="{{ $post->image }}" alt="画像が読み込めません。"/>
+            </div>
+            <p>今日やった宿題</p>
+            <p>{{ $post->task }}</p>
+            
         </div>
         <div>
             <p class="edit">[<a href="/posts/{{ $post->id }}/edit">編集</a>]</p>
