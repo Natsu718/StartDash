@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('image', 100);
             $table->string('task',200);
             $table->timestamps();
-            $table->timestamps();
             
         });
     }
