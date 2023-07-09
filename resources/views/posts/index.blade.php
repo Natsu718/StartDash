@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        
+        みんなの投稿
     </x-slot>
         <h1>{{ $user->name }}</h1>
         <h2>投稿一覧画面</h2>
