@@ -11,10 +11,10 @@ class Post extends Model
 
     protected $fillable = [
         'date',
-        'weather'
-        'daily'
-        'image'
-        'task'
+        'weather',
+        'daily',
+        'image',
+        'task',
         'user_id',
     ];
 
