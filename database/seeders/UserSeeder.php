@@ -20,6 +20,9 @@ class UserSeeder extends Seeder
          DB::table('users')->insert([
             'name' =>'Otsuki Rena',
             'email' => 'otsukirena@levtech11.com',
+            'school_id' => 1,
+            'grade_id'=>1,
+            'classx_id'=>1,
             'password' => Hash::make('12345678'),
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),

@@ -17,21 +17,34 @@
         </div>
         <!-- School -->
         <div class="mt-4">
-            <x-input-label for="school" :value="__('School')" />
-            <x-text-input id="school" class="block mt-1 w-full" type="school" name="school" :value="old('school')"/>
+            <x-input-label for="school" :value="__('学校')" />
+            
+            <select class="block mt-1 w-full" name="school">
+                @foreach($schools as $school)
+                    <option value="{{$school -> id}}">{{$school->school}}</option>
+                @endforeach
+            </select>
             <x-input-error :messages="$errors->get('school')" class="mt-2" />
         </div>
         
         <!-- Grade -->
         <div class="mt-4">
-            <x-input-label for="grade" :value="__('Grade')" />
-            <x-text-input id="grade" class="block mt-1 w-full" type="grade" name="grade" :value="old('grade')"/>
+            <x-input-label for="grade" :value="__('学年')" />
+            <select class="block mt-1 w-full" name="grade">
+                @foreach($grades as $grade)
+                    <option value="{{$grade -> id}}">{{$grade->grade}}</option>
+                @endforeach
+            </select>
             <x-input-error :messages="$errors->get('grade')" class="mt-2" />
         </div>
          <!-- Classx -->
         <div class="mt-4">
-            <x-input-label for="classx" :value="__('class')" />
-            <x-text-input id="classx" class="block mt-1 w-full" type="classx" name="classx" :value="old('classx')"/>
+            <x-input-label for="classx" :value="__('クラス')" />
+            <select class="block mt-1 w-full" name="classx">
+                @foreach($classxes as $classx)
+                    <option value="{{$classx -> id}}">{{$classx->classx}}</option>
+                @endforeach
+            </select>
             <x-input-error :messages="$errors->get('classx')" class="mt-2" />
         </div>
 
