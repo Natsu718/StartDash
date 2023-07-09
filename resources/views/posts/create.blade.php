@@ -2,28 +2,30 @@
     <x-slot name="header">
         作成画面
     </x-slot>
-        <h1>チーム開発会へようこそ！</h1>
-        <h2>投稿作成</h2>
-        <form action="/posts" method="POST">
+        <form action="/posts" method="POST" enctype="multipart/form-data">
             @csrf
             <div>
-                <h2>タイトル</h2>
-                <input type="text" name="post[title]" placeholder="タイトル" value="{{ old('post.title') }}"/>
-                <p class="title__error" style="color:red">{{ $errors->first('post.title') }}</p>
+            <h2>日付</h2>
+                <input type="text" name="post[date]" placeholder="◯月◯日" value="{{ old('post.date') }}"
+                <p class="date__error" style="color:red">{{ $errors->first('post.date') }}</p>
             </div>
             <div>
-                <h2>本文</h2>
-                <textarea name="post[body]" placeholder="今日も1日お疲れさまでした。">{{ old('post.body') }}</textarea>
-                <p class="body__error" style="color:red">{{ $errors->first('post.body') }}</p>
+            <h2>天気</h2>
+                <input type="text" name="post[weather]" placeholder="晴れ、曇り、雨" value="{{ old('post.weather') }}"/>
+                <p class="weather__error" style="color:red">{{ $errors->first('post.weather') }}</p>
             </div>
             <div>
-                <h2>カテゴリー</h2>
-                <select name="post[category_id]">
-                    @foreach($categories as $category)
-                        <option value="{{ $category->id }}">{{ $category->name }}</option>
-                    @endforeach
-                </select>
+            <h2>今日あったこと</h2>
+                <input type="text" name="post[daily]" placeholder="◯◯へ行った" value="{{ old('post.daily') }}"/>
+                <p class="daily__error" style="color:red">{{ $errors->first('post.daily') }}</p>
             </div>
+            <h2>写真</h2>
+            <div class="image">
+             <input type="file" name="image"></div>
+            </div>
+            <h2>今日やった宿題</h2>
+            <input type="text" name="post[task]" placeholder="◯◯をした" value="{{ old('post.task') }}"/>
+            <p class="task__error" style="color:red">{{ $errors->first('post.task') }}</p>
             <input type="submit" value="保存"/>
         </form>
         <div><a href="/">戻る</a></div>
