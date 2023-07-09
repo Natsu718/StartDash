@@ -5,14 +5,30 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
-use Cloudinary:
+use Cloudinary;
 
 class PostController extends Controller
 {
+    public function grade_index(Post $post)
+    {
+        return view('posts/grade_index')->with(['posts' => $post->getPaginateByLimit()]);
+    }
+    
+     public function class_index(Post $post)
+    {
+        return view('posts/class_index')->with(['posts' => $post->getPaginateByLimit()]);
+    }
+
+     public function name_index(Post $post)
+    {
+        return view('posts/name_index')->with(['posts' => $post->getPaginateByLimit()]);
+    }
+
     public function index(Post $post)
     {
         return view('posts/index')->with(['posts' => $post->getPaginateByLimit()]);
     }
+
 
     public function show(Post $post)
     {
@@ -37,12 +53,12 @@ class PostController extends Controller
         return view('posts/edit')->with(['post' => $post]);
     }
 
-    public function update(Request $request, Post $post)
+/*    public function store(Request $request, Post $post)
     {
         $input_post = $request['post'];
         $post->fill($input_post)->save();
 
         return redirect('/posts/' . $post->id);
     }
-
+*/  
 }
