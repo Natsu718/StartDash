@@ -28,6 +28,12 @@
             <x-text-input id="grade" class="block mt-1 w-full" type="grade" name="grade" :value="old('grade')"/>
             <x-input-error :messages="$errors->get('grade')" class="mt-2" />
         </div>
+         <!-- Classx -->
+        <div class="mt-4">
+            <x-input-label for="classx" :value="__('class')" />
+            <x-text-input id="classx" class="block mt-1 w-full" type="classx" name="classx" :value="old('classx')"/>
+            <x-input-error :messages="$errors->get('classx')" class="mt-2" />
+        </div>
 
         <!-- Password -->
         <div class="mt-4">
