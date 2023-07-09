@@ -5,28 +5,31 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
+use App\Models\Grade;
+use App\Models\User;
+use App\Models\Classx;
 use Cloudinary;
 
 class PostController extends Controller
 {
-    public function grade_index(Post $post)
+    public function grade_index(Post $post,Grade $grade)
     {
-        return view('posts/grade_index')->with(['posts' => $post->getPaginateByLimit()]);
+        return view('posts/grade_index')->with(['posts' => $post->getPaginateByLimit(),'grades'=>$grade->get()]);
     }
     
-     public function class_index(Post $post)
+     public function class_index(Grade $grade,Classx $classx)
     {
-        return view('posts/class_index')->with(['posts' => $post->getPaginateByLimit()]);
+        return view('posts/class_index')->with(['grade' => $grade, 'classxes'=>$classx->get()]);
     }
 
-     public function name_index(Post $post)
+     public function name_index(Grade $grade,Classx $classx,User $user)
     {
-        return view('posts/name_index')->with(['posts' => $post->getPaginateByLimit()]);
+        return view('posts/name_index')->with(['grade' => $grade, 'classx'=>$classx, 'users'=>$user->get()]);
     }
 
-    public function index(Post $post)
+    public function index(Grade $grade,Classx $classx,User $user,Post $post)
     {
-        return view('posts/index')->with(['posts' => $post->getPaginateByLimit()]);
+        return view('posts/index')->with(['grade' => $grade, 'classx'=>$classx, 'user'=>$user, 'posts'=>$post->get()]);
     }
 
 

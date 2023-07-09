@@ -8,8 +8,7 @@
             @foreach ($posts as $post)
                 <div style='border:solid 1px; margin-bottom: 10px;'>
                     <p>　
-                    {{$post->date}}
-                    <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
+                    <a href="/{{ $grade->id }}/{{$classx->id}}/{{$user->id}}/{{$post->id}}">{{ $post->date }}</a>
                     </p>
                 </div>
             @endforeach
