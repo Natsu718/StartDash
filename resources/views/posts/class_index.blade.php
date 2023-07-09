@@ -4,13 +4,11 @@
     </x-slot>
         <h1>どのクラスにいく？</h1>
         <div>
-            @foreach ($posts as $post)
+            @foreach ($classxes as $classx)
                 <div style='border:solid 1px; margin-bottom: 10px;'>
-                    <p>クラス：<a href="/posts/{{ $post->class->id }}">{{ $post->class->class }}</a></p>
+                    <p>クラス：<a href="/{{ $grade->id }}/{{$classx->id}}">{{ $classx->classx }}</a></p>
                 </div>
             @endforeach
         </div>
-        <div>
-            {{ $posts->links() }}
-        </div>
+
 </x-app-layout>
