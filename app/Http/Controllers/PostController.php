@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
-use Cloudinary:
+use Cloudinary;
 
 class PostController extends Controller
 {
@@ -26,7 +26,7 @@ class PostController extends Controller
 
     public function store(Post $post, Request $request)
     {
-         $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+        $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
         $input = $request['post'];
         $post->fill($input)->save();
         return redirect('/posts/' . $post->id);
