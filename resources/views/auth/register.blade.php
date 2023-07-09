@@ -30,7 +30,7 @@
         </div>
          <!-- Classx -->
         <div class="mt-4">
-            <x-input-label for="classx" :value="__('classx')" />
+            <x-input-label for="classx" :value="__('class')" />
             <x-text-input id="classx" class="block mt-1 w-full" type="classx" name="classx" :value="old('classx')"/>
             <x-input-error :messages="$errors->get('classx')" class="mt-2" />
         </div>
