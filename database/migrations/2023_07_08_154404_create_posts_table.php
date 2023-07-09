@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-hi
+
 return new class extends Migration
 {
     /**
@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('daily',200);
             $table->string('image', 100);
             $table->string('task',200);
+            $table->timestamps();
             $table->timestamps();
             
         });
