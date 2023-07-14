@@ -16,9 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//  Route::get('/', function () {
+//      return view('welcome');
+//  });
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -26,7 +27,7 @@ Route::get('/dashboard', function () {
 
 Route::controller(PostController::class)->middleware(['auth'])->group(function(){
     Route::get('/', 'grade_index')->name('grade_index');
-    Route::get('/{grade}', 'class_index')->name('class_index');
+    Route::get('/{grade}', 'class_index')->name('class_index')->whereNumber('grade');
     Route::get('/{grade}/{classx}', 'name_index')->name('name_index');
     Route::get('/{grade}/{classx}/{user}', 'index')->name('index');
     Route::get('/posts/create','create')->name('create');

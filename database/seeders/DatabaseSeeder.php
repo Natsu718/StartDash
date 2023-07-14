@@ -19,8 +19,8 @@ class DatabaseSeeder extends Seeder
             SchoolSeeder::class,
             GradeSeeder::class,
             ClassxSeeder::class,
-            PostSeeder::class,
             UserSeeder::class,
+            PostSeeder::class,
             
         ]);
     }

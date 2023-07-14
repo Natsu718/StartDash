@@ -16,13 +16,16 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-       /**DB::table('posts')->insert([
-            'date' => 'チ',
-            'body' => 'チームで協力して一つの成果物を作るイベントです！メンバー全員で助け合いましょう！',
-            'category_id' => 1,
+       DB::table('posts')->insert([
+           'user_id' =>1,
+            'date' => '2023/07/09',
+            'weather'=>'晴れ',
+            'daily' => 'StartDashかましたるわ！！',
+            'image'=>'',
+            'task'=>'ハッカソン',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
-        ]);*/
+        ]);
 
         
     }
